@@ -32,7 +32,6 @@ float previouspitcherror = 0.0;
 int currentTime = 0;
 int previousTime = 0;
 float deltattime = 0;
-float newestreadings[50] = {}; // Reserved for future smoothing
 float derivative = 0;
 
 void setup() {
@@ -119,12 +118,5 @@ void loop() {
     // Save current state for next loop iteration
     previouspitcherror = pitcherror;
     previousTime = currentTime;
-
-    // Debug output to serial monitor
-    Serial.print(activemotorpin);
-    Serial.print("    ");
-    Serial.print(pitcherror);
-    Serial.print("    ");
-    Serial.println(motorsignal);
   }
 }
